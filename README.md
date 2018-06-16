@@ -24,4 +24,5 @@ and for production builds just run `node fuse.js prod` if for some reason you wa
 eventually ovserve that looks nice in your app `node fuse.js serve`
 
 
-
+## Development
+Clone this repository, open a console and cd into the `App` directory, and run `node fuse.js`, after that your bundle will be recompiled on source changes, then just press F5 and that's it the app wil load and start
