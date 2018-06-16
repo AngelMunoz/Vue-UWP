@@ -1,0 +1,27 @@
+{
+  "name": "vue-fuse-uwp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fuse-box": "^3.2.2",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.0.19",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "postcss-selector-parser": "^5.0.0-rc.3",
+    "typescript": "^2.9.2",
+    "uglify-es": "^3.3.9",
+    "vue": "^2.5.16",
+    "vue-hot-reload-api": "^2.3.0",
+    "vue-template-compiler": "^2.5.16",
+    "vue-template-es2015-compiler": "^1.6.0"
+  }
+}
