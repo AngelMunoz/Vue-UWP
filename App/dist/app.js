@@ -168,7 +168,7 @@ ___scope___.file("components/UwpMediaToolbar.vue", function(exports, require, mo
 var _options = { _vueModuleId: 'data-v-fbf04edf'}
 Object.assign(_options, {
         _scopeId: null,
-        render: function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-toolbar',{attrs:{"dark":""}},[_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.pickAudio}},[_c('v-icon',[_vm._v("library_music")])],1),_vm._v(" "),(_vm.file.isAvailable && !_vm.isPlaying)?_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.play}},[_c('v-icon',[_vm._v("play_arrow")])],1):(_vm.file.isAvailable && _vm.isPlaying)?_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.pause}},[_c('v-icon',[_vm._v("pause")])],1):_vm._e(),_vm._v(" "),_c('v-toolbar-title',[_vm._v(_vm._s(_vm.file.displayName)+" - "+_vm._s(_vm.file.displayType)+" "),(_vm.isPlaying)?_c('span',[_vm._v(_vm._s(_vm.position)+": "+_vm._s(_vm.duration))]):_vm._e()])],1)},
+        render: function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-toolbar',{attrs:{"dark":""}},[_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.pickAudio}},[_c('v-icon',[_vm._v("library_music")])],1),_vm._v(" "),(_vm.file.isAvailable && !_vm.isPlaying)?_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.play}},[_c('v-icon',[_vm._v("play_arrow")])],1):(_vm.file.isAvailable && _vm.isPlaying)?_c('v-btn',{attrs:{"icon":""},on:{"click":_vm.pause}},[_c('v-icon',[_vm._v("pause")])],1):_vm._e(),_vm._v(" "),_c('v-toolbar-title',[_vm._v(_vm._s(_vm.file.displayName)+" - "+_vm._s(_vm.file.displayType))])],1)},
         staticRenderFns: []
       })
 "use strict";
@@ -196,18 +196,6 @@ exports.default = {
         this.picker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
         this.picker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.musicLibrary;
         this.picker.fileTypeFilter.replaceAll([".mp3"]);
-    },
-    watch: {
-        position() {
-            if (!this.player)
-                return 0;
-            return this.player.position;
-        },
-        duration() {
-            if (!this.mediaSource)
-                return 0;
-            return this.mediaSource.duration;
-        }
     },
     methods: {
         pickAudio() {

@@ -9,8 +9,7 @@
     <v-btn icon v-else-if="file.isAvailable && isPlaying" @click="pause">
       <v-icon>pause</v-icon>
     </v-btn>
-    <v-toolbar-title>{{ file.displayName }} - {{file.displayType}} <span v-if="isPlaying">{{ position }}: {{ duration }}</span></v-toolbar-title>
-
+    <v-toolbar-title>{{ file.displayName }} - {{file.displayType}}</v-toolbar-title>
   </v-toolbar>
 
 </template>
@@ -37,16 +36,6 @@
       this.picker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
       this.picker.suggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.musicLibrary;
       this.picker.fileTypeFilter.replaceAll([".mp3"]);
-    },
-    watch: {
-      position() {
-        if (!this.player) return 0;
-        return this.player.position;
-      },
-      duration() {
-        if (!this.mediaSource) return 0;
-        return this.mediaSource.duration;
-      }
     },
     methods: {
       async pickAudio() {
