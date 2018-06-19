@@ -6,7 +6,7 @@ const {
   HTMLPlugin,
   VueComponentPlugin,
   CopyPlugin,
-  QuantumPlugin,
+  QuantumPlugin
 } = require("fuse-box");
 
 context(class {
@@ -14,34 +14,30 @@ context(class {
     return FuseBox.init({
       homeDir: "src",
       output: "dist/$name.js",
+      target: 'browser@es6',
       plugins: [
         CSSPlugin(),
         HTMLPlugin({ useDefault: true }),
         VueComponentPlugin(),
-        CopyPlugin({ files: ["**/*.woff2"], dest: '', }),
-        !this.isProduction && WebIndexPlugin({
+        CopyPlugin({ files: ["**/*.woff2"], dest: '' }),
+        WebIndexPlugin({
           template: './index.html'
-        }),
-        this.isProduction && QuantumPlugin({
-          uglify: true,
-          treeshake: true,
-          bakeApiIntoBundle: "app"
         })
       ],
       useTypescriptCompiler: true,
       allowSyntheticDefaultImports: true,
+      sourceMaps: { project: !this.isProduction, inline: false }
     });
   }
-})
+});
 
 task("default", ['clean'], async context => {
   const fuse = context.getConfig();
   fuse.bundle("app")
-    .hmr()
     .watch()
     .instructions(">main.js");
 
-  await fuse.run()
+  await fuse.run();
 });
 
 task("prod", ['clean'], async context => {
@@ -64,9 +60,9 @@ task("serve", ['clean'], async context => {
   const fuse = context.getConfig();
   fuse.dev();
   fuse.bundle("app")
-    .hmr()
+    .hmr({ reload: true })
     .watch()
     .instructions(">main.js");
 
-  await fuse.run()
-})
+  await fuse.run();
+});

@@ -9,7 +9,7 @@
       <v-list dense>
         <v-list-tile @click="$router.push('/')">
           <v-list-tile-action>
-            <v-icon>Home</v-icon>
+            <v-icon>home</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>About</v-list-tile-title>
@@ -43,7 +43,7 @@ export default {
   name: "App",
   data() {
     return {
-      drawer: true
+      drawer: false
     };
   }
 };

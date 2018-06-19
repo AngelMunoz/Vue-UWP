@@ -41,7 +41,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>80e9605b-6aa5-443c-85b9-56703fbc6d98</ProjectGuid>
-    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>
+    </TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptCompileOnSaveEnabled>false</TypeScriptCompileOnSaveEnabled>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
@@ -52,7 +56,7 @@
   <PropertyGroup>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>$(VersionNumberMajor).$(VersionNumberMinor)</MinimumVisualStudioVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>App_TemporaryKey.pfx</PackageCertificateKeyFile>
@@ -63,6 +67,7 @@
     </AppxManifest>
     <Content Include="dist\255d70a-material.woff2" />
     <Content Include="dist\app.js" />
+    <Content Include="dist\app.js.map" />
     <Content Include="dist\index.html" />
     <Content Include="fuse.js" />
     <Content Include="index.html" />
@@ -77,6 +82,7 @@
     <Content Include="package.json" />
     <Content Include="src\App.vue" />
     <Content Include="src\components\HelloComponent.vue" />
+    <Content Include="src\components\UwpMediaToolbar.vue" />
     <Content Include="src\main.css" />
     <Content Include="src\main.js" />
     <Content Include="src\material.woff2" />
